@@ -1,9 +1,10 @@
 {
   "name": "portif-lio",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hengustavoo/Portif-lio/issues"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "homepage": "https://github.com/hengustavoo/Portif-lio#readme",
   "description": ""
