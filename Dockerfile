@@ -1,12 +1,16 @@
-FROM node:18-alpine
+FROM node:18
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json package-lock.json* ./
+# Copia apenas os arquivos necessários para instalar dependências
+COPY package*.json ./
 RUN npm install
 
+# Copia o restante do projeto
 COPY . .
 
+# Expõe a porta do servidor Node
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Inicia o servidor
+CMD ["node", "server.js"]
