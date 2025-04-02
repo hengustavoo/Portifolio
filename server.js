@@ -19,7 +19,7 @@ const mysql = require('mysql2/promise');
 
 // Configuração do MySQL (usará variáveis de ambiente)
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || '137.131.188.67',
+  host: process.env.DB_HOST || 'mysql_db',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_USER_PASSWORD || '1212',
   database: process.env.DB_NAME || 'portifolio'
