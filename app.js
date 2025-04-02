@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const app = express();
 const connection = require('./database'); // Importa a conexão
 
@@ -14,4 +14,4 @@ app.get('/projetos', async (req, res) => {
 
 app.listen(3000, () => {
   console.log('Servidor rodando em http://localhost:3000');
-});
+}); */
