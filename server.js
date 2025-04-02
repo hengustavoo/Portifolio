@@ -16,6 +16,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const mysql = require('mysql2/promise');
+const cors = require('cors'); // Importe o pacote
+
+app.use(cors());
 
 // Configuração do MySQL (usará variáveis de ambiente)
 const pool = mysql.createPool({
