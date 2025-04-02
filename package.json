@@ -17,7 +17,8 @@
     "url": "https://github.com/hengustavoo/Portif-lio/issues"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^3.14.0"
   },
   "homepage": "https://github.com/hengustavoo/Portif-lio#readme",
   "description": ""
