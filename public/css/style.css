@@ -108,6 +108,60 @@ a {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+#perfil-img {
+  display: flex;
+  height: 220px;
+}
+
+#name-perfil {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6780a0;
+  margin-bottom: 0px;
+}
+
+#desc-perfil {
+  font-size: 15px;
+  color: gray;
+}
+
+.perfil-options > a {
+  display: flex;
+  margin-bottom: 5px;
+  color: #8da8cc;
+}
+
+.perfil-infos {
+  margin-bottom: 5px;
+}
+
+.perfil-infos > a {
+  color: #8da8cc;
+}
+
+#perfil {
+  margin-left: 3px;
+  margin-right: 99px;
+}
+
+.apps {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-app {
+  margin-bottom: 20px;
+}
+
+.apps > a {
+  margin-bottom: 5px;
+  color : #8da8cc;
+}
+
 .main-content {
   background: white;
   padding: 15px;
