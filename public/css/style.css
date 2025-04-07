@@ -113,20 +113,22 @@ a {
 }
 
 #perfil-img {
-  display: flex;
   height: 220px;
+  margin-bottom: 15px;
 }
 
 #name-perfil {
   font-size: 20px;
   font-weight: bold;
   color: #6780a0;
-  margin-bottom: 0px;
+  margin: 50px 0px 0px 0px;
+  cursor: pointer;
 }
 
 #desc-perfil {
   font-size: 15px;
   color: gray;
+  margin: 7px 0px 10px 0px;
 }
 
 .perfil-options > a {
