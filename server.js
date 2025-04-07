@@ -1,31 +1,24 @@
 const express = require('express');
-const path = require('path');
+const mysql = require('mysql2');
+const cors = require('cors');
+
 const app = express();
-const mysql = require('mysql2/promise');
+app.use(cors({ origin: 'https://devgustavo.com.br' }));
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'mysql_db',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_USER_PASSWORD || '1212',
-  database: process.env.DB_NAME || 'portifolio'
+const connection = mysql.createConnection({
+  host: 'mysql.devgustavo.com.br',
+  user: 'myroot',
+  password: '1212',
+  database: 'mysql_db'
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/api/projetos', async (req, res) => {
-  try {
-    const [rows] = await pool.query('SELECT * FROM projetos');
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+app.get('/api/projetos', (req, res) => {
+  connection.query('SELECT * FROM projetos', (err, results) => {
+    if (err) return res.status(500).send(err);
+    res.json(results);
+  });
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+app.listen(3000, () => {
+  console.log('API rodando em http://localhost:3000');
 });
