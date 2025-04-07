@@ -9,7 +9,8 @@ const connection = mysql.createConnection({
   host: 'mysql.devgustavo.com.br',
   user: 'myroot',
   password: '1212',
-  database: 'mysql_db'
+  database: 'mysql_db',
+  port: 3306
 });
 
 app.get('/api/projetos', (req, res) => {
