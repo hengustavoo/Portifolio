@@ -1,31 +1,22 @@
 const express = require('express');
-const path = require('path');
+const cors = require('cors');
+
 const app = express();
-const mysql = require('mysql2/promise');
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'mysql_db',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_USER_PASSWORD || '1212',
-  database: process.env.DB_NAME || 'portifolio'
-});
+// Configuração detalhada do CORS
+const corsOptions = {
+  origin: 'https://devgustavo.com.br',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors(corsOptions));
 
-app.get('/api/projetos', async (req, res) => {
-  try {
-    const [rows] = await pool.query('SELECT * FROM projetos');
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Suas rotas
+app.get('/api/projetos', (req, res) => {
+  res.json([{id: 1, nome: "Projeto Exemplo"}]);
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
