@@ -1,25 +1,17 @@
 const express = require('express');
-const mysql = require('mysql2');
-const cors = require('cors');
+const path = require('path');
 
 const app = express();
-app.use(cors({ origin: 'https://devgustavo.com.br' }));
+const PORT = 3000;
 
-const connection = mysql.createConnection({
-  host: 'mysql.devgustavo.com.br',
-  user: 'myroot',
-  password: '1212',
-  database: 'mysql_db',
-  port: 3306
+// Servir arquivos estáticos da pasta "public"
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota padrão (opcional)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/api/projetos', (req, res) => {
-  connection.query('SELECT * FROM projetos', (err, results) => {
-    if (err) return res.status(500).send(err);
-    res.json(results);
-  });
-});
-
-app.listen(3000, () => {
-  console.log('API rodando em http://localhost:3000');
+app.listen(PORT, () => {
+  console.log(`Aplicação web rodando em http://localhost:${PORT}`);
 });
