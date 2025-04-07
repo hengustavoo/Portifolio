@@ -29,8 +29,24 @@ app.get('/api/projetos', (req, res) => {
   db.query('SELECT * FROM projetos', (err, results) => {
     if (err) {
       console.error('❌ ERRO AO CONSULTAR PROJETOS:');
-      console.error(err); // Mostra tudo
+      console.error(err);
       return res.status(500).json({ erro: 'Erro ao buscar projetos' });
+    }
+
+    console.log('✅ Consulta realizada com sucesso!');
+    console.log(results);
+    res.json(results);
+  });
+});
+
+app.get('/api/recados', (req, res) => {
+  console.log('🔍 Rota /api/recados chamada...');
+
+  db.query('SELECT * FROM recados', (err, results) => {
+    if (err) {
+      console.error('❌ ERRO AO CONSULTAR RECADOS:');
+      console.error(err);
+      return res.status(500).json({ erro: 'Erro ao buscar recados' });
     }
 
     console.log('✅ Consulta realizada com sucesso!');
