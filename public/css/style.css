@@ -113,7 +113,6 @@ a {
 }
 
 #perfil-img {
-  height: 220px;
   margin-bottom: 15px;
 }
 
@@ -121,7 +120,6 @@ a {
   font-size: 20px;
   font-weight: bold;
   color: #6780a0;
-  margin: 50px 0px 0px 0px;
   cursor: pointer;
 }
 
@@ -165,6 +163,30 @@ a {
 }
 
 .main-content {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  gap: 20px;
+}
+
+.welcome {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#menu {
+  display: flex;
+  gap: 15px;
+}
+
+#menuitem {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.feed {
   background: white;
   padding: 15px;
   border-radius: 10px;

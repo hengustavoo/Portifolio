@@ -6,6 +6,7 @@
     <title>Orkut | Gustavo Valério</title>
     <link rel="shortcut icon" href="./imgs/shortcut orkut.png" type="icon" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/modal.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/scripts.js"></script>
@@ -32,9 +33,11 @@
     <main>
       <div class="container">
         <div class="sidebar">
-          <img id="perfil-img" src="./imgs/perfil.jpeg" alt="">
+          <div class="img-perfil">
+            <img class="perfil-img" src="./imgs/perfil.jpeg" alt="Foto de perfil de Gustavo" />
+          </div>
           <a id="name-perfil">Gustavo Valério</a>
-          <p id="desc-perfil">masculino,<br>solteiro(a)<br>Brasil</p>
+          <p id="desc-perfil">masculino,<br />solteiro(a)<br />Brasil</p>
           <div class="perfil-options">
             <div class="perfil-infos">
               <a href="" id="perfil">🙍‍♂️ perfil</a>
@@ -47,18 +50,44 @@
           </div>
           <div class="apps">
             <h3>Apps</h3>
-             <a href="" id="add-app">➕ adicionar apps</a>
-             <a href="">📄 listas</a>
-             <a href="">🚀 atualizações</a>
-             <a href="">⚙️ configurações</a>
-             <a href="">⭐ ajudar o orkut</a>
+            <a href="" id="add-app">➕ adicionar apps</a>
+            <a href="">📄 listas</a>
+            <a href="">🚀 atualizações</a>
+            <a href="">⚙️ configurações</a>
+            <a href="">⭐ ajudar o orkut</a>
           </div>
         </div>
 
         <div class="main-content">
-          <h3>Bem-vindo(a), Gustavo</h3>
-          <p>📌 Feed de atividades</p>
-          <p>💬 Últimas mensagens</p>
+          <div class="welcome">
+            <h2>Bem-vindo(a), Gustavo</h2>
+            <div id="menu">
+              <div id="menuitem">
+                <span> recados </span>
+                <span> 📝0 </span>
+              </div>
+              <div id="menuitem">
+                <span> fotos </span>
+                <span> 📷0 </span>
+              </div>
+              <div id="menuitem">
+                <span> videos </span>
+                <span> 📹0 </span>
+              </div>
+              <div id="menuitem">
+                <span> fãs </span>
+                <span> ⭐0 </span>
+              </div>
+              <div id="menuitem">
+                <span> mensagens </span>
+                <span> ✉️0 </span>
+              </div>
+            </div>
+          </div>
+          <div class="feed">
+            <p>📌 Feed de atividades</p>
+            <p>💬 Últimas mensagens</p>
+          </div>
         </div>
 
         <div class="sidebar-right">
@@ -70,5 +99,10 @@
       </div>
     </main>
     <footer></footer>
+    <div class="modal" id="imageModal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="expandedImg" />
+      <div id="imgCaption"></div>
+    </div>
   </body>
 </html>
